@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список товаров</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <div class="goods-container">
+        {% for good in goods %}
+            <div class="good">
+                {% if forloop.first %}
+                    <img class="sale-icon" src="{% static 'images/icon.png' %}" alt="Sale">
+                {% endif %}
+                <img class="img" src="{% static good.img %}" alt="{{ good.type }}">
+                <h2>{{ good.type }}</h2>
+                <button class="save-button">Сохранить</button>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

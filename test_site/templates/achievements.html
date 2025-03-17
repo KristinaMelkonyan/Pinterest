@@ -1,0 +1,14 @@
+{% extends 'base_htmls/base1.html' %}
+
+{% block title %}Наши достижения{% endblock %}
+
+{% block content %}
+    <h2>Наши достижения</h2>
+    <ul>
+        {% for achievement in achievements %}
+        <li>{{ achievement }}</li>
+        {% empty %}
+        <li>Достижений пока нет.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

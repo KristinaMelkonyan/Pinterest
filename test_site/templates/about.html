@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page_name }}</title>
+</head>
+<body>
+    <header>
+        <h1>{{ nickname }}</h1>
+        <hr />
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Главная страница</a></li>
+                <li><a href="{% url 'about' %}">О магазине</a></li>
+                <li><a href="{% url 'achievements' %}">Наши достижения</a></li>
+            </ul>
+        </nav>
+        <hr />
+    </header>
+    <main>
+        <h2>О нас</h2>
+        <p>{{ description }}</p>
+        <p>Наш адрес: {{ address }}</p>
+        <p>Телефон: {{ phone }}</p>
+        {% load static %}
+            <img src="{% static 'images\foto.jpg' %}" alt="Пример картинки" width = 200 height = 150>
+            <img src="{% static 'images\foto2.jpg' %}" alt="Пример картинки" width = 200 height = 150>
+            <img src="{% static 'images\foto3.jpg' %}" alt="Пример картинки" width = 200 height = 150>
+    </main>
+    <footer>
+        <p>Сайт создан 28.02.25 - {{ nickname }}</p>
+    </footer>
+</body>
+</html>
